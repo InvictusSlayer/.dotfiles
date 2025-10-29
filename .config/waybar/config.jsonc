@@ -8,7 +8,7 @@
     "spacing": 4, // Gaps between modules (4px)
     "modules-left": [
         "network",
-        "backlight",
+        "custom/brightness",
         "pulseaudio",
         "power-profiles-daemon",
         "idle_inhibitor",
@@ -18,8 +18,8 @@
         "hyprland/workspaces#left",
         "clock",
         "custom/power",
-	"battery",
-	"hyprland/workspaces#right"
+        "battery",
+        "hyprland/workspaces#right"
     ],
     "modules-right": [
         "keyboard-state",
@@ -40,25 +40,25 @@
             "5": "%",
             "default": "."
         },
-	"persistent-workspaces": {
-	    "*": [1, 2, 3, 4, 5]
-	}
+        "persistent-workspaces": {
+            "*": [1, 2, 3, 4, 5]
+        }
     },
     "hyprland/workspaces#right": {
-	"persistent-only": true,
+        "persistent-only": true,
         "format": "{icon}",
         "format-icons": {
-	        "6": "+",
-	        "7": "d",
-	        "8": "i",
-	        "9": "G",
-	        "10": "q",
-	        "special": "H",
+            "6": "+",
+            "7": "d",
+            "8": "i",
+            "9": "G",
+            "10": "q",
+            "special": "H",
             "default": "."
         },
-	"persistent-workspaces": {
-	    "*": [6, 7, 8, 9, 10]
-	}
+        "persistent-workspaces": {
+            "*": [6, 7, 8, 9, 10]
+        }
     },
     "keyboard-state": {
         "numlock": true,
@@ -127,7 +127,7 @@
         "format-icons": ["", "", ""]
     },
     "backlight": {
-        // "device": "acpi_video1",
+        // "device": "hyprsunset",
         "format": "{icon} {percent}%",
         "format-icons": ["", "", "", "", "", "", "", "", ""]
     },
@@ -185,6 +185,15 @@
             "default": ["", "", ""]
         },
         "on-click": "pavucontrol"
+    },
+    "custom/brightness": {
+        "format": "{icon} {percentage}%",
+        "return-type": "json",
+        "exec": "$HOME/.config/waybar/scripts/brightness.sh",
+        "format-icons": ["", "", "", "", "", "", "", "", ""]
+    },
+    "custom/dunst": {
+        "format": "dunst"
     },
     "custom/media": {
         "format": "{icon} {text}",

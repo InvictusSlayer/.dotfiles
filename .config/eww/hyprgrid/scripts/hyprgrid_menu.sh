@@ -12,7 +12,7 @@ function change_ws {
     exit_grid
 }
 
-selected_ws=$(echo $(cat $HOME/.config/hypr/scripts/selected))
+selected_ws=$(<$HOME/.config/hypr/scripts/selected)
 
 if [[ "$selected_ws" == "0" ]]; then
     selected_ws=$(hyprctl monitors | grep "focused: yes" -B 10 | grep "active workspace" | awk -F': ' '{print $2}' | cut -d' ' -f1)

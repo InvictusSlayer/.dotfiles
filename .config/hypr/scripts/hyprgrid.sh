@@ -8,7 +8,7 @@ function animate {
     hyprctl keyword animation "workspacesOut,1,2.0,ws,$1"
 }
 
-selected_ws=$(echo $(cat ~/.config/hypr/scripts/selected))
+selected_ws=$(<$HOME/.config/hypr/scripts/selected)
 active_ws=$(hyprctl monitors | grep "focused: yes" -B 10 | grep "active workspace" | awk -F': ' '{print $2}' | cut -d' ' -f1)
 
 echo $active_ws

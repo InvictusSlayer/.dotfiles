@@ -69,6 +69,7 @@ button:hover {
 #power-profiles-daemon,
 #custom-power,
 #keyboard-state,
+#custom-brightness,
 #mpd {
     font-family: 'JetBrainsMono Nerd Font Propo', sans-serif;
     padding: 0 10px;
