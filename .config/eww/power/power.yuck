@@ -1,0 +1,52 @@
+(defvar poweropt "0")
+
+(defwindow power-menu
+  :monitor 0
+  :stacking "overlay"
+  :geometry (geometry
+    :width "20%"
+    :height "80%"
+    :anchor "center"
+  )
+  (box
+    :orientation "v"
+    :class "menu"
+    (box
+      (power-button :opt "1" :icon "⏻" :cmd "systemctl poweroff")
+      (power-button :opt "2" :icon "" :cmd "systemctl reboot")
+    )
+    (box
+      (power-button :opt "3" :icon "" :cmd "systemctl suspend")
+      (power-button :opt "4" :icon "" :cmd "hyprctl dispatch exit")
+    )
+  )
+)
+
+(defwidget power-button [opt icon cmd]
+  (overlay
+    :class "power-button-frame"
+    (eventbox
+      :onhover "${EWW_CMD} update poweropt=\"${opt}\""
+      :onclick "${EWW_CMD} close power-menu && ${EWW_CMD} close power-closer && ${cmd}"
+      (box
+        :class "power-button ${poweropt == opt ? "selected" : ""}"
+        (label :text icon)
+      )
+    )
+  )
+)
+
+(defwindow power-closer
+  :monitor 0
+  :geometry (geometry
+    :width "100%"
+    :height "100%"
+  )
+  :stacking "fg"
+  :focusable "none"
+  (eventbox
+    :class "closer"
+    :onhover "${EWW_CMD} update poweropt=\"0\""
+    :onclick "${EWW_CMD} close power-menu && ${EWW_CMD} close power-closer"
+  )
+)

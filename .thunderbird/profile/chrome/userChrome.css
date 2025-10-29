@@ -1,0 +1,84 @@
+:root {
+  --custom-bg: rgba(200,100,100,0.5) !important;
+}
+
+:root {
+  font-family: "JetBrainsMono Nerd Font" !important;
+
+  --selected-item-color: var(--custom-bg) !important;
+  --tabline-color: #f8928e !important;
+  --toolbar-field-focus-border-color: var(--custom-bg) !important;
+  --lwt-tab-line-color: var(--custo-bg) !important;
+  --autocomplete-popup-highlight-background: var(--custom-bg) !important;
+  --sidebar-highlight-background-color: var(--custom-bg) !important;
+  --sidebar-highlight-border-color: var(--custom-bg) !important;
+  --folderpane-unread-count-background: var(--custom-bg) !important;
+  --folderpane-unread-new-count-background: var(--custom-bg) !important;
+  --new-folder-color: var(--custom-bg) !important;
+}
+
+#unifiedToolbarContainer, #toolbar-menubar, #tabs-toolbar,
+#spacesToolbar, #paneLayout,
+#calendarContent, calendar-modevbox, 
+#chatTabPanel, 
+#status-bar {
+	background: rgba(90,5,46,0.5) !important;
+  box-shadow: none !important;
+}
+
+#navigation-toolbox,
+html,
+#tabpanelcontainer,
+#folderPane, #folderPaneHeaderBar, #folderTree,
+#threadPane, #threadPaneHeaderBar, #threadTree,
+#threadTree tr,
+#calendarTabPanel, #calendarDisplayBox {
+	background: transparent !important;
+  box-shadow: none !important;
+  color: #13f1da !important;
+}
+
+#calendarTabPanel, #calendarItemPanel, 
+#addressBookTabWrapper0, #preferencesTabWrapper1,
+#calendar-list, #calendar-list-inner-pane, #calendar-list-pane,
+#messageHeader, #messagepanebox, #mail-menubar {
+	background: #transparent !important;
+}
+
+#folderPane, #threadPane {
+  background: rgba(0,0,0,0.1) !important;
+}
+
+#folderPaneHeaderBar, #threadPaneHeaderBar {
+  background: rgba(0,0,0,0.4) !important;
+}
+
+#threadTree tr[is="thread-card"] .card-container {
+  background: transparent !important;
+  background-image: linear-gradient(to right, 
+    color-mix(in srgb, var(--ac-bkgd-color), transparent 30%), 
+    color-mix(in srgb, var(--ac-bkgd-color), transparent 30%) var(--ac-card-label-width),
+    rgba(0,0,0,0.4) var(--ac-card-label-width), rgba(0,0,0,0.4) 100%) !important;
+  border: 1px solid color-mix(in srgb, var(--ac-bkgd-color), transparent 30%) !important;
+  border-radius: 8px !important;
+}
+
+#threadTree tr[is="thread-card"] .card-container:hover,
+#threadTree tr[is="thread-card"].selected .card-container {
+  background-image: linear-gradient(to right, var(--ac-bkgd-color), 
+    var(--ac-bkgd-color) var(--ac-card-label-width), 
+    rgba(200,100,100,0.2) var(--ac-card-label-width), 
+    rgba(200,100,100,0.2) 100%) !important;
+  border: 1px solid var(--ac-bkgd-color) !important;
+}
+
+.tab-background {
+  background: rgba(0,0,0,0.25) !important; 
+  border: none !important;
+  box-shadow: none !important;
+  border-radius: 8px 8px 0 0 !important;
+}
+
+.tab-background[selected] {
+  background: rgba(0,0,0,0.46) !important;
+}

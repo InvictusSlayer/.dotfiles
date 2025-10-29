@@ -1,0 +1,111 @@
+(defvar selected "0")
+
+(defwindow hyprgrid
+  :monitor 0
+  :stacking "overlay"
+  :geometry (geometry
+    :width "70%"
+    :height "90%"
+    :anchor "center"
+  )
+  (box
+    :orientation "v"
+    :class "menu"
+    (box
+      (workspace-button :id 1 :symbol "!")
+      (workspace-button :id 2 :symbol "@")
+      (workspace-button :id 3 :symbol "#")
+      (workspace-button :id 4 :symbol "$")
+      (workspace-button :id 5 :symbol "%")
+    )
+    (box
+      (workspace-button :id 6 :symbol "+")
+      (workspace-button :id 7 :symbol "d")
+      (workspace-button :id 8 :symbol "i")
+      (workspace-button :id 9 :symbol "G")
+      (workspace-button :id 10 :symbol "q")
+    )
+  )
+)
+
+(defwidget workspace-button [id symbol]
+  (overlay
+    :class "workspace-button-frame"
+    (eventbox
+      :onhover "~/.config/eww/hyprgrid/scripts/hyprgrid_menu.sh hover ${id} && ${EWW_CMD} update selected=\"${id}\""
+      :onclick "~/.config/eww/hyprgrid/scripts/hyprgrid_menu.sh click ${id} && ${EWW_CMD} update selected=\"0\""
+      (box
+        :class "workspace-button ${selected == id ? "selected" : ""}"
+        (label :text symbol)
+      )
+    )
+  )
+)
+
+(defwindow grid-closer
+  :monitor 0
+  :geometry (geometry
+    :width "100%"
+    :height "100%"
+  )
+  :stacking "fg"
+  :focusable "none"
+  (eventbox
+    :class "closer"
+    ;:onhover "${EWW_CMD} update selected=\"0\""
+    :onclick "~/.config/eww/hyprgrid/scripts/hyprgrid_menu.sh exit"
+  )
+)
+
+(defwidget workspace-button-win [id symbol]
+  (overlay
+    :class "workspace-button-frame"
+    (label :text symbol)
+    (button
+      :class "workspace-button"
+      (box
+        ;:halign "end"
+        :space-evenly false
+        (box
+          :class "window"
+          :hexpand true
+          :vexpand false
+          :geometry (geometry
+            :x "0%"
+            :y "5%"
+            :width "49%"
+            :height "46%"
+            :anchor "top left"
+          )
+          1
+        )
+        (box
+          :class "window"
+          :hexpand true
+          :vexpand false
+          :geometry (geometry
+            :x "0%"
+            :y "52%"
+            :width "49%"
+            :height "46%"
+            :anchor "top left"
+          )
+          2
+        )
+        (box
+          :class "window"
+          :hexpand false
+          :vexpand false
+          :geometry (geometry
+            :x "50%"
+            :y "5%"
+            :width "49%"
+            :height "93%"
+            :anchor "top left"
+          )
+          3
+        )
+      )
+    )
+  )
+)

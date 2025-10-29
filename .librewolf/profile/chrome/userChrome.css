@@ -1,0 +1,58 @@
+@namespace url("http://www.mozilla.org/keymaster/gatekeeper/there.is.only.xul");
+
+#navigator-toolbox {
+    background: rgba(90,5,46,0.5) !important;
+    box-shadow: none !important;
+    color: #13f1da !important;
+}
+
+#TabsToolbar, #nav-bar, #PersonalToolbar {
+    background: transparent !important;
+    box-shadow: none !important;
+    border-radius: 8px !important;
+    color: #13f1da !important;
+}
+
+.tab-background {
+    background: rgba(0,0,0,0.25) !important;
+    box-shadow: none !important;
+    border-radius: 8px !important;
+}
+
+.tabbrowser-tab:hover > .tab-stack > .tab-background:not([selected],[multiselected]) {
+    background: rgba(0,0,0,0.5) !important;
+}
+
+.tab-background[selected] {
+    background: rgba(200,100,100,0.3) !important;
+}
+
+#urlbar-background, .searchbar-textbox {
+    background-color: rgba(0,0,0,0.2) !important;
+    border: none !important;
+    box-shadow: none !important;
+    color: #13f1da !important;
+}
+
+#urlbar-input, .searchbar-textbox {
+    color: #13f1da !important;
+}
+
+.toolbarbutton-1 {
+    background: transparent !important;
+    box-shadow: none !important;
+    border: none !important;
+}
+
+.titlebar-button {
+    -moz-appearance: none !important;
+    background: transparent !important;
+    border: none !important;
+    padding: 8px 12px !important;
+}
+
+.titlebar-button > .toolbarbutton-icon {
+    fill: #13f1da !important;
+    stroke: none !important;
+}
+
