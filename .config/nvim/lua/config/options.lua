@@ -18,3 +18,5 @@ opt.cursorline = true
 opt.backspace = "indent,eol,start"
 
 opt.clipboard:append("unnamedplus")
+
+vim.g.autoformat = false
