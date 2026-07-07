@@ -1,6 +1,6 @@
 local opt = vim.opt
 
-opt.relativenumber = false
+opt.relativenumber = true
 opt.number = true
 
 opt.tabstop = 4
