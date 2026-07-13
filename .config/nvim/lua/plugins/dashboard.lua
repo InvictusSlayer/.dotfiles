@@ -1,4 +1,4 @@
-local header = [[
+--[[
                                       ..                               
          .xHL           ..          dF                                 
       .-`8MMMhxxx~     @L          'MMbu.         .u    .              
@@ -14,7 +14,8 @@ local header = [[
       !""*888%~              98"                                       
       !   `"  .            ./"                                         
       '-....:~            ~`                                           
-]] --[[
+]]
+local header = [[
       ...                         .                                                           
    xHM8"`~ .x8X      .uef^"      @M8>                                                         
  :MMM8   .f"8MMMHf :dMME         %MP      ..    .     :                  .u    .              

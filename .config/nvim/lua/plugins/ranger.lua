@@ -2,6 +2,7 @@ return {
     "kelly-lin/ranger.nvim",
     config = function()
         require("ranger-nvim").setup({
+            keybinds = {},
             enable_cmds = false,
             replace_netrw = false,
             ui = {
