@@ -65,4 +65,14 @@ return {
             },
         },
     },
+    keys = {
+        { "<leader>gd", false },
+        { "<leader>gD", false },
+        { "<leader>gi", false },
+        { "<leader>gI", false },
+        { "<leader>gp", false },
+        { "<leader>gP", false },
+        { "<leader>gs", false },
+        { "<leader>gS", false },
+    }
 }
