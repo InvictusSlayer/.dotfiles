@@ -4,8 +4,8 @@ rows=2
 cols=5
 
 function animate {
-    hyprctl keyword animation "workspacesIn,1,2.0,ws,$1"
-    hyprctl keyword animation "workspacesOut,1,2.0,ws,$1"
+    hyprctl dispatch "hl.animation({ leaf = 'workspacesIn',  enabled = 1, speed = 2.0,  bezier = 'bounce', style = '$1' })"
+    hyprctl dispatch "hl.animation({ leaf = 'workspacesOut', enabled = 1, speed = 2.0,  bezier = 'bounce', style = '$1' })"
 }
 
 selected_ws=$(<$HOME/.config/hypr/scripts/selected)
@@ -34,6 +34,6 @@ case $1 in
 esac
 
 if [[ "$selected_ws" == "0" ]]; then
-    hyprctl dispatch workspace $ws
+    hyprctl dispatch "hl.dsp.focus({ workspace = $ws })"
 fi
 animate fade
